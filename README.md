@@ -4,8 +4,8 @@ A tool for FFPE DNA methylation based cancer diagbosis and tissue-of-origin pred
 # Usage
 python Test_run.py -I testMethyFile -O resultFile -M method
 
-testMethyFile: the testing file with methylation values
-resultFile: the output file
+testMethyFile: the testing file with methylation values;
+resultFile: the output file;
 method: the machine learning method, including Adaboost, k-Nearest Neighbor (knn), Logistic Regression (lgr), Linear Support Vector Classifier (LinearSVC), 
 Naïve Bayesian (nb), Random Forest (randomforest), and Support Vector Machine (svm).
 
