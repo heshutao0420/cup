@@ -18,7 +18,7 @@ The last column is the sample type and the remaining columns are methylation val
 resultFile: The first line is the cancer type. The second line is the predicted cancer type of the test sample, and the third line is the predicted probability of each cancer type.
 
 # Prepare the input file
-testMethyFile is generated using RRBS data. Adapter and inline barcode sequences were removed using Trim Galore (version 0.6.2). The trimmed reads were mapped to the human 
+The testMethyFile is generated using RRBS data. Adapter and inline barcode sequences were removed using Trim Galore (version 0.6.2). The trimmed reads were mapped to the human 
 genome version hg19 using BSMAP, with options “-q 20 -f 5 -r 0 -v 0.05 -s 16 -S 1”. The resulting BAM files were consequently converted to mHap files using the mHapTools.
 CpG methylation metrics were extracted using the tool MethylDackel developed by Devon Ryan (https://github.com/dpryan79/MethylDackel). The mean methylation level of one CGI is 
 calculated as the ration between the number of methylated cytosines and the total number of cytosines within the CGI. Proportion of Discordant Reads (PDR), Cell Heterogeneity-Adjusted 
