@@ -1,27 +1,16 @@
-import numpy as np
 import argparse
 import pandas as pd
 from sklearn.calibration import CalibratedClassifierCV
 from pandas.core.frame import DataFrame
 from imblearn.over_sampling import SMOTE
-from scipy import stats
-import itertools
-from sklearn.model_selection import StratifiedKFold, train_test_split, cross_val_score
-from sklearn.pipeline import Pipeline
-from sklearn.utils import check_random_state
+from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.svm import SVC, LinearSVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.neural_network import MLPClassifier
-from sklearn.linear_model import Perceptron
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import AdaBoostClassifier
-from sklearn.naive_bayes import GaussianNB, BernoulliNB
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
-from sklearn.preprocessing import StandardScaler
+from sklearn.naive_bayes import BernoulliNB
 from hyperopt import fmin, tpe, hp, STATUS_OK, Trials
-import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-I","--input_sample", required = True, help="input sample data full path including file name")
@@ -93,8 +82,6 @@ if args.method == "svm":
     test_y_pred_prob = model_clf.predict_proba(test_selected_data.values.reshape(1, -1))
     result_df = DataFrame([test_y_pred, test_y_pred_prob.ravel()])
     result_df.index = ["predicted_cancer_type", "predicted_probability"]
-#    result_df.columns = ["breast", "cervical", "esophagus", "head", "intestinal", "liver", "lung", "ovarian",
-#                         "pancreatic", "stomach", "thyroid"]
     result_df.columns = ["breast", "cervical", "esophagus", "head", "intestinal", "liver", "lung", "ovarian",
                          "stomach", "thyroid"]
     result_df.to_csv(args.output_path)
