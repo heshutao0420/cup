@@ -6,7 +6,7 @@ python Test_run.py -I testMethyFile -O resultFile -M method
 
 testMethyFile: the testing file with methylation values;
 resultFile: the output file;
-method: the machine learning method, including Adaboost, k-Nearest Neighbor (knn), Logistic Regression (lgr), Linear Support Vector Classifier (LinearSVC), 
+method: the machine learning method, including Adaboost, k-Nearest Neighbor (knn), Logistic Regression (lgr), Linear Support Vector Classifier (linearsvc), 
 Naïve Bayesian (nb), Random Forest (randomforest), and Support Vector Machine (svm).
 
 # File Instruction
