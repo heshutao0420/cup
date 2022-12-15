@@ -1,5 +1,5 @@
 # cup
-A tool for FFPE DNA methylation based cancer diagbosis and tissue-of-origin prediction.
+A tool for FFPE DNA methylation based cancer diagnosis and tissue-of-origin prediction.
 
 # Usage
 python Test_run.py -I testMethyFile -O resultFile -M method
