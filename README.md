@@ -9,6 +9,13 @@ resultFile: the output file;
 method: the machine learning method, including Adaboost, k-Nearest Neighbor (knn), Logistic Regression (lgr), Linear Support Vector Classifier (linearsvc), 
 Naïve Bayesian (nb), Random Forest (randomforest), and Support Vector Machine (svm).
 
+python feature_selection.py -tx trainingDataFile -ty trainingLabelFile -Ox SelectedDataFile -Oy SelectedLabelFile
+trainingDataFile: the training data file with methylation values;
+trainingLabelFile: the training label file;
+SelectedDataFile: the training data file after feature selection;
+SelectedLabelFile: the training label file after feature selection.
+
+
 # File Instruction
 All the input and output files are comma delimited.
 
@@ -16,6 +23,14 @@ testMethyFile: Each line represents a sample. The first line is the CGI location
 The last column is the sample type and the remaining columns are methylation values of the features.
 
 resultFile: The first line is the cancer type. The second line is the predicted cancer type of the test sample, and the third line is the predicted probability of each cancer type.
+
+trainingDataFile: Each line represents a sample. The first line is the CGI location, the first column is the sample ID and the remaining columns are methylation values of the features.
+
+trainingLabelFile: Each line represents a sample. The first column is the sample ID and the second columns are the label of the corresponding sample.
+
+SelectedDataFile: Each line represents a sample. The first line is the CGI location, the first column is the label of the corresponding sample and the remaining columns are methylation values of the features.
+
+SelectedLabelFile: Each line represents a sample. The first column is the sample ID and the second columns are the label of the corresponding sample.
 
 # Prepare the input file
 The testMethyFile is generated using RRBS data. Adapter and inline barcode sequences were removed using Trim Galore (version 0.6.2). The trimmed reads were mapped to the human 
@@ -26,5 +41,5 @@ cLonal Methylation (CHALM), and Methylated Haplotype Load (MHL) are calulated by
 
 
 # Example
-The file example needed to run is provided under the "example" folder.
+The file example needed to run is provided under the "example" or "feature selection" folder.
 
